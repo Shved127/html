@@ -1,0 +1,168 @@
+/* Общие стили для тела страницы */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* светлый фон */
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Навигация */
+nav.shap {
+    background-color: #333;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+nav.shap ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Центрирование элементов по горизонтали */
+}
+
+nav.shap ul li {
+    margin-right: 15px;
+}
+
+nav.shap ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav.shap ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Основной контент */
+section.content {
+    text-align: center;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff; /* белый фон для контента */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Заголовки */
+h1 {
+    text-align: center;
+}
+
+/* Стили для форм */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+button[type="submit"] {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #4CAF50; /* зеленый цвет */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049; /* чуть темнее при наведении */
+}
+
+/* Стили для кнопок (ссылок) как кнопок */
+/* Общие стили для кнопок */
+.btn {
+    display:inline-block;
+    padding:10px 20px;
+    margin-top:20px;
+    color:#fff;
+    text-decoration:none;
+    border-radius:5px;
+    font-weight:bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-green {
+    background-color:#4CAF50; /* Вход */
+}
+.btn-green:hover {
+    background-color:#45a049;
+}
+
+.btn-blue {
+    background-color:#2196F3; /* Регистрация */
+}
+.btn-blue:hover {
+    background-color:#1976D2;
+}
+
+.btn-orange {
+    background-color:#f39c12; /* Оставить заявление */
+}
+.btn-orange:hover {
+    background-color:#e67e22;
+}
+
+/* Мобильная адаптация (по желанию) */
+@media(max-width:600px){
+   nav.shap ul{
+       flex-direction:block; 
+   }
+   nav.shap ul li{
+       margin-bottom:10px; 
+   }
+}
+
+.file-upload {
+    margin-top: 20px;
+}
+
+.file-upload label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+#photo {
+    display: inline-block;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Центрирование сообщения */
+.success-message {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: green; /* Можно изменить цвет по желанию */
+}
+
+/* Стили для поля загрузки файла */
+.file-upload {
+    margin-top: 20px;
+}
+
+.file-upload label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
