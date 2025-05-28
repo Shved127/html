@@ -41,14 +41,9 @@ try {
     <nav class="shap">
         <ul>
             <li><a href="#" class="salka">Главная</a></li>
-            <li><a href="/applications.php" class="salka">Заявления</a></li> 
-            <li><a href="/users_admin.php">Управление пользователями</a></li>
-            <?php if (isset($_SESSION['user_id'])): ?>
-                <li><a href="logout.php">Выход</a></li>
-            <?php else: ?>
-                <li><a href="/login.php">Войти</a></li>
-                <li><a href="register.php">Регистрация</a></li>
-            <?php endif; ?>
+            <li><a href="../naryshenia/applications.php" class="salka">Заявления</a></li> 
+            <li><a href="../naryshenia/users_admin.php">Управление пользователями</a></li>
+            <li><a href="../naryshenia/logout.php">Выход</a></li>
         </ul>
     </nav>
 
@@ -67,8 +62,8 @@ try {
         <!-- Например, список пользователей, управление заявками и т.д. -->
 
         <!-- Пример кнопки для выхода -->
-        <a href="/applications.php" class="btn btn-orange">Посмотреть заявления</a>
-        <a href="logout.php" class="btn btn-orange">Выйти из панели</a>
+        <a href="../naryshenia/applications.php" class="btn btn-orange">Посмотреть заявления</a>
+        <a href="../naryshenia/logout.php" class="btn btn-orange">Выйти из панели</a>
     </section>
 
     <!-- Подвал -->

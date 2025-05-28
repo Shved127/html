@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'] ?? '';
 
     if (empty($login) || empty($password)) {
-        $error_message = 'Пожалуйста, введите логин и пароль.';
+        $error_message = 'Пожалуйста, введите логин и пароль';
     } else {
         // Поиск пользователя по логину
         $stmt = $pdo->prepare("SELECT * FROM users WHERE login = ?");
@@ -128,8 +128,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </form>
 
 <div class="links">
-<p>Нет аккаунта? <a href="register.php">Зарегистрироваться</a></p>
-<p><a href="/">Вернуться на главную</a></p>
+<p>Нет аккаунта? <a href="../naryshenia/register.php">Зарегистрироваться</a></p>
+<p><a href="../naryshenia/index.php">Вернуться на главную</a></p>
 </div>
 
 </div>

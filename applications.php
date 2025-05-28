@@ -103,11 +103,11 @@ $applications = $stmt->fetchAll();
 <?php endif; ?>
 
             <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
-                <li><a href="/admin.php">вернуться на главную</a></li>
+                <li><a href="../naryshenia/admin.php">вернуться на главную</a></li>
             <?php else: ?>
-                <li><a href="/index.php">Вернуться на главную</a></li>
+                <li><a href="../naryshenia/index.php">Вернуться на главную</a></li>
             <?php endif; ?>
-<a href="logout.php">Выйти из аккаунта</a>
+<a href="../naryshenia/logout.php">Выйти из аккаунта</a>
 
 </section>
 

@@ -21,12 +21,12 @@ $dsn = "mysql:host=$host;dbname=$db;charset=utf8mb4";
     <nav class="shap">
         <ul>
             <li><a href="#" class="salka">Главная</a></li>
-            <li><a href="/applications.php" class="salka">Заявления</a></li> 
+            <li><a href="../naryshenia/applications.php" class="salka">Заявления</a></li> 
             <?php if (isset($_SESSION['user_id'])): ?>
-                <li><a href="logout.php">Выход</a></li>
+                <li><a href="../naryshenia/logout.php">Выход</a></li>
             <?php else: ?>
-                <li><a href="/login.php">Войти</a></li>
-                <li><a href="register.php">Регистрация</a></li>
+                <li><a href="../naryshenia/login.php">Войти</a></li>
+                <li><a href="../naryshenia/register.php">Регистрация</a></li>
             <?php endif; ?>
         </ul>
     </nav>
@@ -38,12 +38,12 @@ $dsn = "mysql:host=$host;dbname=$db;charset=utf8mb4";
 <?php if (isset($_SESSION['user_id'])): ?>
     <p>Здравствуйте, <?= htmlspecialchars($_SESSION['full_name']) ?>!</p>
     <p>Если вы стали свидетелем нарушений правил дорожного движения, можете оставить заявление и мы его рассмотрим в ближайшее время.</p>
-    <a href="zayavlenie.php" class="btn btn-orange">Оставить заявление</a>
+    <a href="../naryshenia/zayavlenie.php" class="btn btn-orange">Оставить заявление</a>
 <?php else: ?>
     <p>Пожалуйста, войдите в систему или зарегистрируйтесь для доступа к заявкам.</p>
     <div style="margin-top: 20px;">
-        <a href="/login.php" class="btn btn-green">Вход</a>
-        <a href="/register.php" class="btn btn-blue">Регистрация</a>
+        <a href="../naryshenia/login.php" class="btn btn-green">Вход</a>
+        <a href="../naryshenia/register.php" class="btn btn-blue">Регистрация</a>
     </div>
 <?php endif; ?>
     </section>

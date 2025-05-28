@@ -103,9 +103,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <button type="submit">Отправить заявление</button>
 </form>
 
-<a href="/applications.php">Посмотреть заявления</a>
+<a href="../naryshenia/applications.php">Посмотреть заявления</a>
 
-<p><a href="index.php">Вернуться на главную</a></p>
+<p><a href="../naryshenia/index.php">Вернуться на главную</a></p>
 </section>
 
 </body>

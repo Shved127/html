@@ -216,7 +216,7 @@ $users = $stmt->fetchAll();
 <button type='submit'>Создать пользователя</button>
 </form>
 
-<p><a href="/admin.php">Вернуться в панель администратора</a></p>
+<p><a href="../naryshenia/admin.php">Вернуться в панель администратора</a></p>
 </section>
 
 </body>

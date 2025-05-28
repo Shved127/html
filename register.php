@@ -182,8 +182,8 @@ function validatePhone($phone) {
 </form>
 
 <div class="links">
-<p>Уже есть аккаунт? <a href="login.php">Войти</a></p>
-<p><a href="/">Вернуться на главную</a></p>
+<p>Уже есть аккаунт? <a href="../naryshenia/login.php">Войти</a></p>
+<p><a href="../naryshenia/index.php">Вернуться на главную</a></p>
 </div>
 
 </div>
