@@ -22,7 +22,6 @@ $dsn = "mysql:host=$host;dbname=$db;charset=utf8mb4";
         <ul>
             <li><a href="#" class="salka">Главная</a></li>
             <li><a href="/applications.php" class="salka">Заявления</a></li> 
-            <li><a href="#" class="salka">Лицензия</a></li>
             <?php if (isset($_SESSION['user_id'])): ?>
                 <li><a href="logout.php">Выход</a></li>
             <?php else: ?>

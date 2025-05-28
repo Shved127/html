@@ -42,7 +42,7 @@ try {
         <ul>
             <li><a href="#" class="salka">Главная</a></li>
             <li><a href="/applications.php" class="salka">Заявления</a></li> 
-            <li><a href="#" class="salka">Лицензия</a></li>
+            <li><a href="/users_admin.php">Управление пользователями</a></li>
             <?php if (isset($_SESSION['user_id'])): ?>
                 <li><a href="logout.php">Выход</a></li>
             <?php else: ?>
@@ -67,6 +67,7 @@ try {
         <!-- Например, список пользователей, управление заявками и т.д. -->
 
         <!-- Пример кнопки для выхода -->
+        <a href="/applications.php" class="btn btn-orange">Посмотреть заявления</a>
         <a href="logout.php" class="btn btn-orange">Выйти из панели</a>
     </section>
 

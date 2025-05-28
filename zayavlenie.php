@@ -90,7 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <input type="text" id="reg_number" name="reg_number" required><br><br>
 
     <label for="violation_description">Описание нарушения:</label><br>
-    <textarea id="violation_description" name="violation_description" rows="5" cols="50" required></textarea><br><br>
+    <textarea id="violation_description" name="violation_description" rows="5" cols="50" required placeholder='Опишите ситуцию, точную дату и время, точное местонахождение происшествия и мы обязательно проверим ваши данные.'></textarea><br><br>
 
 <!-- Удалена секция для загрузки фотографии -->
 <!--

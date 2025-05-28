@@ -102,7 +102,11 @@ $applications = $stmt->fetchAll();
 <p>У вас пока нет заявлений.</p>
 <?php endif; ?>
 
-<p><a href="index.php">Вернуться на главную</a></p>
+            <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
+                <li><a href="/admin.php">вернуться на главную</a></li>
+            <?php else: ?>
+                <li><a href="/index.php">Вернуться на главную</a></li>
+            <?php endif; ?>
 <a href="logout.php">Выйти из аккаунта</a>
 
 </section>

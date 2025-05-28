@@ -130,7 +130,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <div class="links">
 <p>Нет аккаунта? <a href="register.php">Зарегистрироваться</a></p>
 <p><a href="/">Вернуться на главную</a></p>
-<p><a href="/admin.php">Войти в панель администратора</a></p>
 </div>
 
 </div>
