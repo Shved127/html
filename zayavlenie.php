@@ -19,7 +19,23 @@ if (!isset($_SESSION['user_id'])) {
     die("Пожалуйста, войдите в систему.");
 }
 
-$message = ''; // Инициализация переменной для сообщений
+// Получение ФИО пользователя из базы (предполагается, что есть таблица users)
+$full_name = '';
+try {
+    $stmt_user = $pdo->prepare("SELECT full_name FROM users WHERE id = ?");
+    $stmt_user->execute([$_SESSION['user_id']]);
+    $user_data = $stmt_user->fetch(PDO::FETCH_ASSOC);
+    if ($user_data && !empty($user_data['full_name'])) {
+        $full_name = $user_data['full_name'];
+    } else {
+        // Если в базе нет поля full_name или оно пустое, можно использовать логин или другой идентификатор
+        $full_name = 'Пользователь'; // или $_SESSION['username']
+    }
+} catch (PDOException $e) {
+    die("Ошибка получения данных пользователя: " . htmlspecialchars($e->getMessage()));
+}
+
+$message = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Получение данных из формы
@@ -35,14 +51,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Вставляем данные в базу без фото
         try {
-            $sql = "INSERT INTO applications (user_id, statement, reg_number, violation_description)
-                    VALUES (?, ?, ?, ?)";
+            $sql = "INSERT INTO applications (user_id, statement, reg_number, violation_description, applicant_name)
+                    VALUES (?, ?, ?, ?, ?)";
             $stmt = $pdo->prepare($sql);
             $stmt->execute([
                 $_SESSION['user_id'],
                 $statement_text,
                 $reg_number,
-                $violation_description
+                $violation_description,
+                $full_name // добавляем ФИО заявителя
             ]);
             $message = "Заявление успешно отправлено!";
         } catch (PDOException $e) {

@@ -41,15 +41,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['login'] = $user_data['login'];
                 $_SESSION['full_name'] = $user_data['full_name']; // если есть
 
-                // Проверка роли
+                // Установка роли
                 if (isset($user_data['role']) && $user_data['role'] === 'admin') {
-                    $_SESSION['is_admin'] = true;
+                    $_SESSION['role'] = 'admin';
+                } else {
+                    $_SESSION['role'] = 'user'; // или оставить пустым
+                }
+
+                // Перенаправление в зависимости от роли
+                if ($_SESSION['role'] === 'admin') {
                     header('Location: admin.php');
                 } else {
-                    // обычный пользователь
-                    header('Location: index.php'); // или другая страница
-                    exit;
+                    header('Location: index.php');
                 }
+                exit;
             } else {
                 $error_message = 'Неверный пароль.';
             }

@@ -1,12 +1,32 @@
 <?php
 session_start();
 
+if (!isset($_SESSION['user_id'])) {
+    header('Location: login.php');
+    exit;
+}
+
+if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
+    // Не админ — перенаправляем или показываем ошибку
+    header('Location: login.php');
+    exit;
+}
+
+// Подключение к базе данных (если нужно)
 $host = 'localhost';
 $db   = 'mydb';
 $user = 'shved';
 $pass = 'DeadDemon6:6';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=utf8mb4";
+
+// Можно подключиться к базе данных, если потребуется
+try {
+    $pdo = new PDO($dsn, $user, $pass);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Ошибка подключения к базе данных: " . $e->getMessage());
+}
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -14,7 +34,7 @@ $dsn = "mysql:host=$host;dbname=$db;charset=utf8mb4";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style/style.css" />
-    <title>Главная</title>
+    <title>Панель администратора</title>
 </head>
 <body>
     <!-- Навигация -->
@@ -35,13 +55,19 @@ $dsn = "mysql:host=$host;dbname=$db;charset=utf8mb4";
     <!-- Основной контент -->
     <section class="content">
         <h1>Добро пожаловать в панель администратора Наруешниям.нет</h1>
-       <!-- Внутри PHP блока -->
-<?php if (isset($_SESSION['user_id'])): ?>
-    <p>Привет, <?= htmlspecialchars($_SESSION['full_name']) ?>!</p>
-    <a href="zayavlenie.php" class="btn btn-orange">Оставить заявление</a>
-<?php else: ?>
-    <>Пожалуйста, вой
-<?php endif; ?>
+
+        <!-- Приветствие -->
+        <?php if (isset($_SESSION['full_name'])): ?>
+            <p>Привет, <?= htmlspecialchars($_SESSION['full_name']) ?>!</p>
+        <?php else: ?>
+            <p>Добро пожаловать!</p>
+        <?php endif; ?>
+
+        <!-- Здесь можно разместить административные функции -->
+        <!-- Например, список пользователей, управление заявками и т.д. -->
+
+        <!-- Пример кнопки для выхода -->
+        <a href="logout.php" class="btn btn-orange">Выйти из панели</a>
     </section>
 
     <!-- Подвал -->
