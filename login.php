@@ -45,7 +45,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 if (isset($user_data['role']) && $user_data['role'] === 'admin') {
                     $_SESSION['is_admin'] = true;
                     header('Location: admin.php');
-                    exit;
                 } else {
                     // обычный пользователь
                     header('Location: index.php'); // или другая страница
